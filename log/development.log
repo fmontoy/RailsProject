@@ -1,0 +1,56 @@
+  [1m[35m (121.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (116.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6766595615797887345);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEstudiantes (20170204155441)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (150.4ms)[0m  [1m[35mCREATE TABLE "estudiantes" ("id" serial primary key, "nombre" character varying, "definitiva" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204155441"]]
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-04 15:56:59 UTC], ["updated_at", 2017-02-04 15:56:59 UTC]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6766595615797887345)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/felipe/Universidad/Septimo Semestre/Topicos Telematica/Practica1/config/routes.rb:4)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/felipe/Universidad/Septimo Semestre/Topicos Telematica/Practica1/config/routes.rb:4)
+Started GET "/" for 127.0.0.1 at 2017-02-04 11:00:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1674ms (Views: 1633.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/main/show_data" for 127.0.0.1 at 2017-02-04 11:00:59 -0500
+Processing by MainController#show_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hq6i98s4JVOPPrjiXod8W4p8SRhpuMA8LiTXwztd6Te9W7dmhRKGbRJWTq0ZwNRPU/pmAfBnPHwFsb33uuiIKg==", "name_user"=>"Felipe Montoya", "note_1"=>"50", "per_1"=>"50", "note_2"=>"50", "per_2"=>"25", "note_3"=>"50", "per_3"=>"25", "commit"=>"Save Data"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (65.5ms)[0m  [1m[32mINSERT INTO "estudiantes" ("nombre", "definitiva", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "Felipe Montoya"], ["definitiva", 5.0], ["created_at", 2017-02-04 16:00:59 UTC], ["updated_at", 2017-02-04 16:00:59 UTC]]
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering tabla/view_table.html.erb within layouts/application
+  [1m[36mEstudiante Load (1.1ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered tabla/view_table.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 235ms (Views: 64.9ms | ActiveRecord: 108.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-04 11:01:08 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/main/show_data" for 127.0.0.1 at 2017-02-04 11:01:35 -0500
+Processing by MainController#show_data as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3eUlGEw64GvyotTucHAWaD9JsMAuVVuod986bHFLY2J+EDCJAhBDVW/KIqE3N7585s+f2beKp+hcSlBY8P4Cfw==", "name_user"=>"Camilo Mejía", "note_1"=>"45", "per_1"=>"50", "note_2"=>"40", "per_2"=>"25", "note_3"=>"39", "per_3"=>"25", "commit"=>"Save Data"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "estudiantes" ("nombre", "definitiva", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "Camilo Mejía"], ["definitiva", 4.225], ["created_at", 2017-02-04 16:01:35 UTC], ["updated_at", 2017-02-04 16:01:35 UTC]]
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering tabla/view_table.html.erb within layouts/application
+  [1m[36mEstudiante Load (0.2ms)[0m  [1m[34mSELECT "estudiantes".* FROM "estudiantes"[0m
+  Rendered tabla/view_table.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 73ms (Views: 32.8ms | ActiveRecord: 31.9ms)
+
+

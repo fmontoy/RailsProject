@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
+    <h1>Definitivas</h1>
+    <div>
+      <%= form_tag(:action => "show_data") do %>
+
+        <p>Nombre:
+        <%= text_field_tag("name_user") %></p>
+        <p>Nota 1:
+          <%= number_field_tag("note_1") %></p>
+        <p></p>
+        <p>Porcentaje
+          <%= number_field_tag("per_1") %></p>
+        <p>Nota 2:
+          <%= number_field_tag("note_2") %></p>
+        <p></p>
+        <p>Porcentaje
+          <%= number_field_tag("per_2") %></p>
+        <p>Nota 3:
+          <%= number_field_tag("note_3") %></p>
+        <p></p>
+        <p>Porcentaje
+          <%= number_field_tag("per_3") %></p>
+        <%= submit_tag("Save Data") %>
+      <% end %>
+    </div>
+    <p><%=@name%></p>
+    <p><%=@avg%></p>
+  </body>
+</html>

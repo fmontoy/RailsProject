@@ -1,0 +1,15 @@
+<h1>Lista Definitivas</h1>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
+<body>
+  <table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @estudiantes.each do |student| %>
+    <tr>
+      <td><%= student.nombre %></td>
+      <td><%= student.definitiva%></td>
+    </tr>
+  <% end %>
+</table>
+</body>
