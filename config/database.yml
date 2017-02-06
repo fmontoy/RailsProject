@@ -17,8 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: cozkibhtxzbyzt
-  password: 5937b53780795e7e53e12e6c05e2faeb40a0608fbceb39f80f8e550240b90b6f
+  host: <%= ENV['POSTGRES_HOST'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
 
@@ -27,7 +28,9 @@ default: &default
 development:
   <<: *default
   database: Practica1_development
-
+  host: <%= ENV['POSTGRES_HOST'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is

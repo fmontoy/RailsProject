@@ -54,3 +54,5 @@ Processing by MainController#show_data as HTML
 Completed 200 OK in 73ms (Views: 32.8ms | ActiveRecord: 31.9ms)
 
 
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/felipe/Universidad/Septimo Semestre/Topicos Telematica/RailsProject/config/routes.rb:4)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/felipe/Universidad/Septimo Semestre/Topicos Telematica/RailsProject/config/routes.rb:4)
